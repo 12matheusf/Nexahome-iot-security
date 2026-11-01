@@ -1,0 +1,85 @@
+## Preservação
+arquivo: tasmota32_release.bin  tamanho: 2234912 bytes
+data da análise: 2026-11-01T11:27:55
+origem: release oficial pública do Tasmota (github.com/arendst/Tasmota, tasmota32.bin)
+SHA-256: 977fd69e58cbae01b8298dade7e7a30eefa5ac5c58b06e021ee63618bfc9add6
+
+## Cabeçalho da imagem ESP32
+magic=0xE9 (0xE9 = imagem ESP válida)  segmentos=6  flash_mode=2  entry=0x40082A84  chip_id=0x0000 (ESP32)
+hash SHA-256 anexado à imagem (flag): 1
+  seg0: load=0x3F400020 len=674308
+  seg1: load=0x3FFBDB60 len=23920
+  seg2: load=0x40080000 len=22644
+  seg3: load=0x400D0020 len=1445124
+  seg4: load=0x40085874 len=68676
+  seg5: load=0x500011D4 len=132
+
+## App descriptor
+versão=  projeto=  ESP-IDF=5.5.5
+
+## Proteções na própria imagem
+bytes após os segmentos: 36 (padding+checksum+SHA-256 = ~36-48 bytes; uma imagem assinada com Secure Boot v2 traria um bloco extra de 4096 bytes)
+  Sem bloco de assinatura Secure Boot v2: a imagem NÃO é assinada (só tem hash de integridade, que não autentica a origem)
+
+## Entropia: 7.001 bits/byte (≈8 = cifrado/comprimido; ~6 = código+dados em claro)
+
+## Strings relevantes (total 9186 strings; amostra até 12 por categoria)
+[endpoints/URL] 6 únicas
+   OPT: "http://schemas.upnp.org/upnp/1/0/"; ns=01
+   http://ota.tasmota.com/tasmota32/release/tasmota32.bin
+   https://ota.tasmota.com/autoconf/%s_manifest.json
+   https://ota.tasmota.com/extensions/
+   https://raw.githubusercontent.com/tasmota/autoconf/main/%s/%s.autoconf
+   https://thelastoutpostworkshop.github.io/microcontroller_devkit/gpio_viewer_1_5/
+[protocolos] 60 únicas
+   &#x1F4E1; <b>%s</b> <i>(MQTT: %s)</i>
+   /modbus.json
+   /upnp/control/basicevent1
+   <fieldset><legend><b>&nbsp;Matter MQTT Remote Device&nbsp;</b></legend><p></p><p><b>Add Remote MQTT sensor or device</b></p>
+   <hr><p><b>Discovered MQTT Devices</b></p><div id='mqtt_disc'><i>Subscribing to tasmota/discovery...</i></div>
+   <tr class='ztdm htrm'><td>&#x1F4E1; <b>%s</b> <i>(MQTT: %s)</i></td>
+   @Modbus|Send|Baudrate|SerialConfig|SerialTimeout
+   BRY: mqtt subscribe all registered topics
+   HTP: MQTT
+   HTP: TLS connection error %d after %d ms
+   MODBUS
+   MQT: MFLN not supported by TLS server
+[credenciais/padrões] 27 únicas
+   @Ifx||Log|Host|Port|User|Org|Password|Token|Database|Bucket|Period|Sensor|RP|Feed
+   @|WebLog|WebTime|Emulation|Webserver|WebPassword|WebRefresh|WebSend|WebQuery|WebColor|WebSensor|WebButton|WebCanvas
+   Backlog0 SSId1 %s;Password1 %s
+   HTP: Bad userid and/or password
+   HTP: Referer '%s' denied. Use 'SO128 1' for HTTP API commands. 'Webpassword' is recommended.
+   HTTP_ADMIN
+   MqttPassword2
+   PASSWORD
+   Password
+   Password3
+   Password4
+   Token 
+[OTA/atualização] 99 únicas
+   ,"%s":{"TotalUsage":%s,"FlowRate":%s}
+   ,"ENERGY":{"TotalStartTime":"%s","Total":%s
+   ,"ExportActiveTotal":%s
+   ,"PowerTotal":%s
+   ,"TotalTariff":%s
+   <%d>1 %s%s000%s %s tasmota - - - 
+   <b>Friendly Name %d</b> (Tasmota%s)<br><input id='a%d' placeholder="Tasmota%s" value="%s"><p></p>
+   <button type='submit' class='btn-action' name='u%s' onclick='return confirm("Confirm upgrade of %s")'>Upgrade</button>
+   <div class='ext-badges'><span class='update-badge'>Upgrade</span></div>
+   <div style='text-align:center;'><b>Upgrade started ...</b></div>
+   <hr><p><b>Discovered MQTT Devices</b></p><div id='mqtt_disc'><i>Subscribing to tasmota/discovery...</i></div>
+   <instance: Partition_otadata(ota_active:%s, ota_seq=[%d,%d], ota_max=%d)>
+[debug] 54 únicas
+   ,"debug":true
+   /dev/console
+   /dev/uart
+   /dev/uart/0
+   BL6: Serial UART%d
+   BL9: Serial UART%d
+   BLE: Serial UART%d
+   BRY: Serial UART%d
+   Berry Scripting console
+   C61: Serial UART%d
+   CM1: Serial UART%d
+   CSE: Serial UART%d

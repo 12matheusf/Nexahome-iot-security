@@ -1,0 +1,8 @@
+Resultados do laboratório hardened (2026-11-01T12:26:03)
+PASSOU  T1 cliente anônimo (TLS, sem login) é recusado | retorno=Not authorized
+PASSOU  T2 senha incorreta é recusada | retorno=Not authorized
+PASSOU  T3 conexão MQTT em claro na porta TLS falha | retorno=sem-resposta
+PASSOU  T4 dispositivo autenticado publica no próprio tópico (3 msgs) | 3 recebidas pelo analista autenticado
+PASSOU  T5 ACL bloqueia publicação em tópico de outro dispositivo | 0 mensagens forjadas entregues
+PASSOU  T6 captura em 8883 NÃO contém senha, tópico nem telemetria em claro | 111 pacotes, 10408 bytes de payload; trechos em claro encontrados: nenhum
+PASSOU  T7 tráfego é TLS (handshake 0x16 0x03 presente) | 8 registros de handshake TLS

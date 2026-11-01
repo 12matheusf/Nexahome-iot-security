@@ -1,0 +1,58 @@
+## Preservação
+arquivo : nexasense_lab_fw.bin
+tamanho : 4194304 bytes
+origem  : informar no relatório (dump da placa via esptool, firmware fornecido ou gerado em laboratório)
+data    : 2026-11-01T11:44:50
+SHA-256 : acaa7151e2a60c3117a7b15ce7d72893127f7fe94fd9bf0a7723f985803cbef4
+cópia de trabalho: firmware/work/work_copy_nexasense_lab_fw.bin (hash idêntico verificado)
+
+## Partições (tabela em 0x8000)
+  nvs       type=data sub=0x02 offset=0x009000 size=0x006000
+  otadata   type=data sub=0x00 offset=0x00f000 size=0x002000
+  phy_init  type=data sub=0x01 offset=0x011000 size=0x001000
+  factory   type=app sub=0x00 offset=0x020000 size=0x180000
+  config    type=data sub=0x82 offset=0x1a0000 size=0x040000
+
+## Cabeçalhos
+  bootloader @0x1000 magic=0xE9 (esperado 0xE9)
+  app factory @0x20000 magic=0xE9
+
+## Proteções no bootloader
+  'secure boot: disabled' encontrado
+  'flash encryption: disabled' encontrado
+
+## Entropia global: 0.007 bits/byte (baixa; <7,5 sugere imagem NÃO cifrada)
+
+## Strings relevantes (de 37 strings)
+[credencial/segredo]
+   wifi.sta.pass=nexa2024lab
+   api.token=lab-token-9f8e7d6c5b4a
+   I (950) mqtt: broker=mqtt://192.168.56.10:1883 user=nexasense pass=Mqtt#Lab123
+   web: http://192.168.56.20/debug  admin:admin
+   {"mqtt":{"host":"192.168.56.10","port":1883,"tls":false,"user":"nexasense","password":"Mqtt#Lab123"},
+[endpoint/URL]
+   I (950) mqtt: broker=mqtt://192.168.56.10:1883 user=nexasense pass=Mqtt#Lab123
+   ota: update url=http://192.168.56.10:8070/fw/nexasense_latest.bin
+   web: http://192.168.56.20/debug  admin:admin
+   GET /api/v1/config HTTP/1.1
+    "ota":{"url":"http://192.168.56.10:8070/fw/nexasense_latest.bin","verify_signature":false},
+[depuração/UART/JTAG]
+   I (312) nexasense: DEBUG console enabled on UART0 115200 8N1
+   I (320) nexasense: type 'help' for diagnostic shell
+   web: http://192.168.56.20/debug  admin:admin
+   UART0 TX=GPIO1 RX=GPIO3
+   JTAG enabled (MTDI=12 MTCK=13 MTMS=14 MTDO=15)
+   efuse: JTAG_DISABLE=0 DISABLE_DL_ENCRYPT=0
+   assert failed: sensor_read /home/dev/nexasense/main/sensor.c:142
+    "debug":{"uart_shell":true,"http_debug":true}}
+[atualização/OTA]
+   otadata
+   esp_https_ota
+   ota: update url=http://192.168.56.10:8070/fw/nexasense_latest.bin
+   ota: signature verification SKIPPED (CONFIG_OTA_VERIFY=n)
+   ota: TLS cert verification disabled
+    "ota":{"url":"http://192.168.56.10:8070/fw/nexasense_latest.bin","verify_signature":false},
+[proteção eFuse]
+   secure boot: disabled
+   flash encryption: disabled
+   efuse: JTAG_DISABLE=0 DISABLE_DL_ENCRYPT=0

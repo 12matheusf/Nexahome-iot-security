@@ -1,0 +1,15 @@
+53046 -> 1883  CONNECT   ....MQTT...<..analyst-spy
+ 1883 -> 53046 CONNACK    ...
+53046 -> 1883  SUBSCRIBE ......nexahome/#.
+ 1883 -> 53046 SUBACK    .....
+53049 -> 1883  CONNECT   .2..MQTT...<..NEXASENSE-0001..nexasense..Mqtt#Lab123
+ 1883 -> 53049 CONNACK    ...
+53049 -> 1883  PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.1, "hum": 57.3, "seq": 0}
+ 1883 -> 53046 PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.1, "hum": 57.3, "seq": 0}
+53049 -> 1883  PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.4, "hum": 57.6, "seq": 1}
+ 1883 -> 53046 PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.4, "hum": 57.6, "seq": 1}
+53049 -> 1883  PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.8, "hum": 56.5, "seq": 2}
+ 1883 -> 53046 PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.8, "hum": 56.5, "seq": 2}
+53049 -> 1883  PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.5, "hum": 57.7, "seq": 3}
+ 1883 -> 53046 PUBLISH   0`.!nexahome/NEXASENSE-0001/telemetry{"id": "NEXASENSE-0001", "temp": 22.5, "hum": 57.7, "seq": 3}
+53049 -> 1883  14        ..

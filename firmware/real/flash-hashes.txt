@@ -1,0 +1,2 @@
+a0c6ed5fa59e18885db435cb22cb0456d6c9bce92477092462224ab6fa5942eb  tasmota32_factory_flash.bin
+a0c6ed5fa59e18885db435cb22cb0456d6c9bce92477092462224ab6fa5942eb  work/work_copy_tasmota32_factory_flash.bin

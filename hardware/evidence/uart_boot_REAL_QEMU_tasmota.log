@@ -1,0 +1,26 @@
+# CAPTURA REAL DA SERIAL (UART0) — firmware oficial tasmota32.factory.bin executando em ESP32 EMULADO (QEMU Espressif 9.2.2-20250817).
+# Não é uma placa física: o QEMU emula a CPU e a flash, mas não o periférico Wi-Fi; por isso o 'Guru Meditation Error' ao iniciar o Wi-Fi é LIMITAÇÃO DO EMULADOR, não vulnerabilidade.
+# Gerado por lab/run_qemu_tasmota.sh em 2026-11-01.
+
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:288
+load:0x40078000,len:13376
+load:0x40080400,len:2904
+entry 0x40080554
+
+00:00:00.030 HDW: ESP32-D0WDQ6 v0.0 (PSRAM disabled)
+00:00:00.032 HDW: PSRAM is disabled, requires specific compilation on this hardware (see doc)
+00:00:00.817 UFS: FlashFS mounted with 312 kB free
+00:00:00.106 CFG: Use defaults
+00:00:00.909 QPC: Reset
+00:00:01.774 BRY: Berry initialized, RAM used 5018 bytes
+00:00:02.470 Project tasmota - Tasmota Version 16.0.0(release-tasmota32)-3.3.12(2026-10-16T07:43:58)
+00:00:09.423 WIF: WifiManager active for 3 minutes
+Guru Meditation Error: Core  0 panic'ed (LoadStorePIFAddrError). Exception was unhandled.
+... [registradores omitidos] ...
+Rebooting... (o ciclo panic/reboot se repete até o fim da captura)

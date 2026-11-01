@@ -1,0 +1,6 @@
+paho-mqtt
+scapy
+amqtt
+cryptography
+pwdlib[argon2]
+reportlab

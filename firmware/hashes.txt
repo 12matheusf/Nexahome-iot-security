@@ -1,0 +1,2 @@
+acaa7151e2a60c3117a7b15ce7d72893127f7fe94fd9bf0a7723f985803cbef4  nexasense_lab_fw.bin
+acaa7151e2a60c3117a7b15ce7d72893127f7fe94fd9bf0a7723f985803cbef4  work/work_copy_nexasense_lab_fw.bin

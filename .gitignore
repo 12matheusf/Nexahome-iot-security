@@ -1,0 +1,3 @@
+hardened/pki/
+hardened/passwd
+firmware/signing/*.key

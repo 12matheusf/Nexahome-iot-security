@@ -1,0 +1,33 @@
+# Conferência cruzada na VM Kali do analista (kali-hexstrike, x86_64) — 01/11/2026 12:13
+# Firmware: tasmota32.factory.bin (release oficial Tasmota). Comandos: sha256sum, binwalk, strings, QEMU Espressif 9.2.2-20250817.
+
+== sha256sum (igual ao hash do relatório e de lab/analyze_firmware.py)
+a0c6ed5fa59e18885db435cb22cb0456d6c9bce92477092462224ab6fa5942eb  tasmota32_factory_flash.bin
+
+== binwalk (trecho)
+DECIMAL       HEXADECIMAL     DESCRIPTION
+4096          0x1000          ESP Image (ESP32): segment count: 3, flash mode: DIO, flash speed: 40MHz, flash size: 4MB, entry address: 0x40080554, hash: sha256
+32768         0x8000          ESP32 Partition Table Entry: label: "nvs", type: DATA, subtype: NVS, offset: 0x9000, size: 0x5000, flags: 0x0 (not encrypted)
+32800         0x8020          ESP32 Partition Table Entry: label: "otadata", type: DATA, subtype: Factory/OTA DATA, offset: 0xe000, size: 0x2000, flags: 0x0 (not encrypted)
+32832         0x8040          ESP32 Partition Table Entry: label: "safeboot", type: APP, subtype: Factory/OTA DATA, offset: 0x10000, size: 0xd0000, flags: 0x0 (not encrypted)
+32864         0x8060          ESP32 Partition Table Entry: label: "app0", type: APP, subtype: OTA 0, offset: 0xe0000, size: 0x2d0000, flags: 0x0 (not encrypted)
+32896         0x8080          ESP32 Partition Table Entry: label: "spiffs", type: DATA, subtype: SPIFFS, offset: 0x3b0000, size: 0x50000, flags: 0x0 (not encrypted)
+65536         0x10000         ESP Image (ESP32): segment count: 6, flash mode: DIO, flash speed: 40MHz, flash size: 4MB, entry address: 0x40081254, hash: sha256
+94797         0x1724D         Unix path: /dev/uart/0
+108418        0x1A782         Unix path: /home/runner/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src/Parsing.cpp
+917504        0xE0000         ESP Image (ESP32): segment count: 6, flash mode: DIO, flash speed: 40MHz, flash size: 4MB, entry address: 0x40082a84, hash: sha256
+1329036       0x14478C        Certificate in DER format (x509 v3), header length: 4, sequence length: 489
+1330100       0x144BB4        Certificate in DER format (x509 v3), header length: 4, sequence length: 459
+1460672       0x1649C0        Unix path: /lib/lib_basic/IRremoteESP8266/IRremoteESP8266/src/IRrecv.cpp
+
+Observação: "flags: 0x0 (not encrypted)" refere-se ao flag da entrada da tabela de partições, NÃO ao estado das eFuses de Flash Encryption.
+
+== strings -n 8 | grep http:// (únicas)
+http://ota.tasmota.com/tasmota32/release/tasmota32.bin
+http://ota.tasmota.com/tasmota32/release/tasmota32-safeboot.bin
+
+== entropia (python) 6.984 bits/byte  (mesmo valor de lab/analyze_firmware.py)
+
+== QEMU (esp32, 40 s): boot do ROM + bootloader + "Tasmota Version 16.0.0(release-tasmota32)-3.3.12(2026-10-16T07:43:58)",
+   "HDW: ESP32-D0WDQ6", "CFG: Use defaults", "WIF: WifiManager active for 3 minutes", seguido de Guru Meditation Error
+   (periférico Wi-Fi não emulado) e ciclo de reboot. Log completo na VM: ~/nexahome-lab/hardware/evidence/uart_full_kali_qemu.log

@@ -1,0 +1,16 @@
+Demo de assinatura de firmware — 2026-11-01T12:26:04
+Algoritmo: Ed25519 sobre a imagem inteira; assinatura em firmware/signing/nexasense_lab_fw.bin.sig
+
+[Imagem original, assinada pelo fabricante]  sha256=acaa7151e2a60c31…
+   dispositivo INSEGURO : ACEITA (verify_signature=false: instala qualquer imagem)
+   dispositivo HARDENED : ACEITA (assinatura válida)
+
+[1 bit alterado no código do app]  sha256=ba9fce4324b44720…
+   dispositivo INSEGURO : ACEITA (verify_signature=false: instala qualquer imagem)
+   dispositivo HARDENED : REJEITADA (assinatura inválida)
+
+[Endpoint do broker trocado (imagem maliciosa)]  sha256=82812e4d31a09741…
+   dispositivo INSEGURO : ACEITA (verify_signature=false: instala qualquer imagem)
+   dispositivo HARDENED : REJEITADA (assinatura inválida)
+
+RESULTADO: mitigação validada — só a imagem original é aceita

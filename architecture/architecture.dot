@@ -1,0 +1,12 @@
+digraph G { rankdir=TB; fontname="Helvetica"; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#EEF3FA", color="#3B5B8C"]; edge [fontname="Helvetica", fontsize=9];
+ subgraph cluster_hw { label="HARDWARE – NexaSense (ESP32)"; style=dashed; color="#888888";
+  S [label="Sensor SHT31\n(I²C 0x44)"]; MCU [label="MCU ESP32\n(Wi-Fi + CPU)"]; FL [label="Flash SPI 4 MB\nbootloader | NVS | factory | config"];
+  UART [label="UART0\nGPIO1/GPIO3\n115200 8N1", fillcolor="#FDE9E7", color="#BB3333"]; JTAG [label="JTAG\nGPIO12–15", fillcolor="#FDE9E7", color="#BB3333"];
+  S -> MCU [label="I²C"]; MCU -> FL [label="SPI"]; MCU -> UART [dir=both]; MCU -> JTAG [dir=both]; }
+ FW [label="Firmware 0.9.3-proto\n(shell de diagnóstico, MQTT, OTA)"]; FL -> FW [label="executa"];
+ WIFI [label="Wi-Fi (estação)\n(SSID NexaLab-IoT)", fillcolor="#FFF4D6", color="#B8860B"]; FW -> WIFI;
+ MQ [label="MQTT :1883\n(sem TLS)", fillcolor="#FDE9E7", color="#BB3333"]; OTA [label="OTA HTTP :8070\n(sem assinatura)", fillcolor="#FDE9E7", color="#BB3333"]; WEB [label="HTTP /debug", fillcolor="#FDE9E7", color="#BB3333"];
+ WIFI -> MQ; WIFI -> OTA; WIFI -> WEB;
+ BR [label="Broker MQTT local\n(rede de laboratório)"]; PLAT [label="Plataforma de\nmonitoramento"]; MQ -> BR -> PLAT; OTA -> BR [style=dotted];
+ ATK1 [label="Atacante com\nacesso físico", shape=oval, fillcolor="#FFD9D9"]; ATK2 [label="Atacante na\nmesma rede", shape=oval, fillcolor="#FFD9D9"];
+ ATK1 -> UART [color="#BB3333"]; ATK1 -> JTAG [color="#BB3333"]; ATK1 -> FL [color="#BB3333", label="dump"]; ATK2 -> MQ [color="#BB3333"]; ATK2 -> OTA [color="#BB3333"]; }

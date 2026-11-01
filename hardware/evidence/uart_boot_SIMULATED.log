@@ -1,0 +1,15 @@
+# ATENÇÃO: log SIMULADO, montado a partir das strings reais do firmware educacional (lab/build_lab_firmware.py).
+# SUBSTITUIR pela captura real da UART (ex.: `screen /dev/ttyUSB0 115200`) se você tiver a placa física.
+ets Jun  8 2016 00:22:57
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+ESP-IDF v4.4.6 2nd stage bootloader
+secure boot: disabled
+flash encryption: disabled
+I (312) nexasense: DEBUG console enabled on UART0 115200 8N1
+I (320) nexasense: type 'help' for diagnostic shell
+I (331) wifi: connecting to SSID=NexaLab-IoT
+I (950) mqtt: broker=mqtt://192.168.56.10:1883 user=nexasense pass=Mqtt#Lab123
+I (960) mqtt: publish topic nexahome/NEXASENSE-0001/telemetry
+ota: update url=http://192.168.56.10:8070/fw/nexasense_latest.bin
+ota: signature verification SKIPPED (CONFIG_OTA_VERIFY=n)
+nexasense> 

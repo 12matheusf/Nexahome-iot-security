@@ -1,0 +1,321 @@
+## Preservação
+arquivo : tasmota32_factory_flash.bin
+tamanho : 3152416 bytes
+origem  : informar no relatório (dump da placa via esptool, firmware fornecido ou gerado em laboratório)
+data    : 2026-11-01T11:54:18
+SHA-256 : a0c6ed5fa59e18885db435cb22cb0456d6c9bce92477092462224ab6fa5942eb
+cópia de trabalho: firmware/real/work/work_copy_tasmota32_factory_flash.bin (hash idêntico verificado)
+
+## Partições (tabela em 0x8000)
+  nvs       type=data sub=0x02 offset=0x009000 size=0x005000
+  otadata   type=data sub=0x00 offset=0x00e000 size=0x002000
+  safeboot  type=app sub=0x00 offset=0x010000 size=0x0d0000
+  app0      type=app sub=0x10 offset=0x0e0000 size=0x2d0000
+  spiffs    type=data sub=0x82 offset=0x3b0000 size=0x050000
+
+## Cabeçalhos
+  bootloader @0x1000 magic=0xE9 (esperado 0xE9)
+  app safeboot @0x10000 magic=0xE9
+  app app0 @0xE0000 magic=0xE9
+
+## Proteções no bootloader
+  'secure boot: disabled': texto não presente na imagem (o estado real fica nos eFuses, que a imagem de flash não contém)
+  'flash encryption: disabled': texto não presente na imagem (o estado real fica nos eFuses, que a imagem de flash não contém)
+
+## Entropia global: 6.984 bits/byte (baixa; <7,5 sugere imagem NÃO cifrada)
+
+## Strings relevantes (de 11064 strings)
+[credencial/segredo]
+   <!DOCTYPE html><html lang="%s" class=""><head><meta charset='utf-8'><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBACAAEAAQCwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP5/b+H6X2/h8k9v4eZnb+Hud2/h7ndv4e53b+FmZm/hMkxv4ZgZb+HOc2/h5+dv4fPPb+H5n2/h/D9v4f5/b+EAAO4EAADuBAAA7gQAAO4EAADuBAAA7gQAAO4EAADuBAAA7gQAAO4EAADuBAAA7gQAAO4EAADuBAAA7gQAAO4E"><title>%s %s</title><script>var x=null,lt,to,tp,pc='';eb=s=>document.getElementById(s);qs=s=>document.querySelector(s);sp=i=>eb(i).type=(eb(i).type==='text'?'password':'text');wl=f=>window.addEventListener('load',f);
+   sta.pswd
+   ap.passwd
+   passive
+   HTP: Referer '%s' denied. Use 'SO128 1' for HTTP API commands. 'Webpassword' is recommended.
+   {"WARNING":"Need user=<username>&password=<password>"}
+   HTP: Bad userid and/or password
+   master secret
+   @|WifiNoSleep|Upgrade|Upload|OtaUrl|SerialLog|Restart|Backlog|Delay|Power|PowerLock|TimedPower|Status|State|Sleep|PowerOnState|PulseTime|BlinkTime|BlinkCount|StateText|SaveData|SO|SetOption|TempRes|HumRes|PressRes|WattRes|VoltRes|FreqRes|AmpRes|EnergyRes|WeightRes|Module|Modules|GPIO|GPIORead|GPIOs|Template|PWM|PWMFrequency|PWMRange|ButtonDebounce|SwitchDebounce|SysLog|LogHost|LogPort|SerialBuffer|SerialSend|Baudrate|SerialConfig|SerialDelimiter|IPAddress|NtpServer|Ap|BSSId|SSId|Password|Hostname|WifiConfig|Wifi|DnsTimeout|DeviceName|FN|FriendlyName|SwitchMode|Interlock|TelePeriod|Reset|Time|Timezone|TimeStd|TimeDst|Altitude|LedPower|LedState|LedMask|LedPwmOn|LedPwmOff|LedPwmMode|WifiPower|TempOffset|HumOffset|SpeedUnit|GlobalTemp|GlobalHum|GlobalPress|SwitchText|WiFiScan|WiFiTest|BatteryPercentage|I2CScan|I2CDriver|DevGroupName|DevGroupSend|DevGroupShare|DevGroupStatus|DevGroupTie|FileLog|Info|TouchCal|TouchThres|CpuFrequency|SetSensor|Sensor|Driver|Json|JsonPP
+   <p><input id='t1' placeholder="Template" value='%s'></p><p><label><input id='t2' type='checkbox'%s><b>Activate</b></label></p></fieldset><br><label><b>Web Admin Password</b><input type='checkbox' onclick='sp("wp")'></label><br><input id='wp' type='password' placeholder="Web Admin Password" value="****"><br><br><label><input id='b3' type='checkbox'%s><b>HTTP API enable</b></label><br><label><input id='b1' type='checkbox'%s><b>MQTT enable</b></label><br><br><label><b>Device Name</b> (%s)</label><br><input id='dn' placeholder="" value="%s"><br><br>
+    value="****"></p><p><b>WiFi Network 2</b> ()<br><input id='s2' placeholder="Type your Alternative WiFi Network" value="%s"></p><p><label><b>WiFi Password</b><input type='checkbox' onclick='sp("p2")'></label><br><input id='p2' type='password' placeholder="Enter your WiFi Password" value="****"></p><p><b>Hostname</b> (%s)<br><input id='h' placeholder="%s" value="%s"></p>
+   <p><b>WiFi Network</b>%s<br><input id='s1' placeholder="Type or Select your WiFi Network" value="%s"></p><p><label><b>WiFi Password</b><input type='checkbox' onclick='sp("p1")'></label><br><input id='p1' type='password' placeholder="Enter your WiFi Password"
+   <fieldset><form method='post' action='/'><p><b>User</b><br><input name='USER1' placeholder='User'></p><p><b>Password</b><br><input name='PASS1' type='password' placeholder='Password'></p><br><button>Ok</button></form></fieldset>
+   @|MqttJSONOnly|MqttTLS|MqttTLSFingerprint|MqttNoRetain|MqttDetachRelay|MqttFingerprint|MqttUser|MqttPassword|MqttKeepAlive|MqttTimeout|MqttWifiTimeout|FileUpload|FileDownload|MqttHost|MqttPort|MqttRetry|MqttClient|FullTopic|Prefix|GroupTopic|Topic|Publish|MqttLog|ButtonTopic|SwitchTopic|ButtonRetain|SwitchRetain|PowerRetain|SensorRetain|InfoRetain|StateRetain|StatusRetain
+   <p><b>User</b> (DVES_USER)<br><input id='mu' placeholder="DVES_USER" value="%s"></p><p><label><b>Password</b><input type='checkbox' onclick='sp("mp")'></label><br><input id='mp' type='password' minlength='5' placeholder="Password" value="****"></p><p><b>Topic</b> = %%topic%% (%s)<br><input id='mt' placeholder="%s" value="%s"></p><p><b>Full Topic</b> (%s)<br><input id='mf' placeholder="%s" value="%s"></p>
+   @|WebLog|WebTime|Emulation|Webserver|WebPassword|WebRefresh|WebSend|WebQuery|WebColor|WebSensor|WebButton|WebCanvas
+   @Ifx||Log|Host|Port|User|Org|Password|Token|Database|Bucket|Period|Sensor|RP|Feed
+   sta.pswd
+   ap.passwd
+   DVES_PASS
+   Password
+   Password3
+   Password4
+   HTP: Referer '%s' denied. Use 'SO128 1' for HTTP API commands. 'Webpassword' is recommended.
+   WebPassword2
+   {"WARNING":"Need user=<username>&password=<password>"}
+   HTP: Bad userid and/or password
+   PASSWORD
+   MqttPassword2
+   user=%s&password=%s&
+   DSL: passed: %d, currMin: %d, tagetMin: %d + error: %d->%d
+   passwd must not be empty
+   secret_key
+   Backlog0 SSId1 %s;Password1 %s
+   Token 
+   TWA: Bus%d Alert - Controller has become error passive
+   the token '%s' is not a valid function name.
+   unexpected token '%s'
+   MTR: non-zero passcode id
+   <p></p><button name='passcode' class='button bgrn'>Change</button></form></p><p></p></fieldset><p></p>
+   <input type='number' min='1' max='99999998' name='passcode' value='%i'>
+   <fieldset><legend><b>&nbsp;Matter Advanced Configuration&nbsp;</b></legend><p></p><form action='/matterc' method='post' onsubmit='return confirm("This will cause a restart.");'><p>Passcode:</p>
+   MTR: OpenCommissioningWindow(timeout=%i, passcode=%s, discriminator=%i, iterations=%i, salt=%s)
+   {"distinguish":%i,"passcode":%i,"ipv4only":%s,"disable_bridge_mode":%s,"nextep":%i,"configuration_version":%i
+   shared_secret
+   show_passcode_form
+   PASSCODE_INVALID
+   generate_random_passcode
+   passcodeId
+   root_passcode
+   master secret
+[endpoint/URL]
+   <p></p><div style='text-align:right;font-size:11px;'><hr><a href='https://github.com/arendst/Tasmota' target='_blank' style='color:#aaa;'>Tasmota %s %s by Theo Arends</a></div></div></body></html>
+   http://ota.tasmota.com/tasmota32/release/tasmota32-safeboot.bin
+   http://
+   <p></p><div style='text-align:right;font-size:11px;'><hr><a href='https://github.com/arendst/Tasmota' target='_blank' style='color:#aaa;'>Tasmota %s %s by Theo Arends</a></div></div></body></html>
+   LOCATION: http://%s:%d/setup.xml
+   OPT: "http://schemas.upnp.org/upnp/1/0/"; ns=01
+   <br><div contenteditable='false' class='br0 bro' readonly id='t1' cols='340' wrap='off'><div class='br1'>Welcome to the Berry Scripting console. Check the <a href='https://tasmota.github.io/docs/Berry/' target='_blank'>documentation</a>.</div></div><form method='get' id='fo' onsubmit='return l(1);'><textarea id='c1' class='br0 bri' rows='4' cols='340' wrap='soft' autofocus required></textarea><button type='submit'>Run code (or press 'Enter' twice)</button></form>
+   <hr><p><b>Add Remote Tasmota or OpenBK</b></p><form action='/matteradd' method='get'><table style='width:100%'><tr><td width='30' style='font-size:smaller;'><b>http://</b></td><td><input type='text' name='url' size='8' value='' required placeholder='IP or domain'></td><td width='10' style='font-size:smaller;'><b>/</b></td></tr></table><div style='display: block;'></div><button class='button bgrn'>Auto-configure remote Tasmota</button></form>
+   <svg style='vertical-align:middle;' width='24' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='100 100 240 240'><defs><style>.cls-1{fill:none}.cls-2{fill:#FFFFFF;}</style></defs><rect class='cls-1' width='420' height='420'/><path class='cls-2' d='M167,156.88a71,71,0,0,0,32.1,14.73v-62.8l12.79-7.38,12.78,7.38v62.8a71.09,71.09,0,0,0,32.11-14.73L280,170.31a96.92,96.92,0,0,1-136.33,0Zm28.22,160.37A96.92,96.92,0,0,0,127,199.19v26.87a71.06,71.06,0,0,1,28.82,20.43l-54.39,31.4v14.77L114.22,300l54.38-31.4a71,71,0,0,1,3.29,35.17Zm101.5-118.06a96.93,96.93,0,0,0-68.16,118.06l23.27-13.44a71.1,71.1,0,0,1,3.29-35.17L309.46,300l12.78-7.38V277.89l-54.39-31.4a71.13,71.13,0,0,1,28.82-20.43Z'/></svg>
+   http://ota.tasmota.com/tasmota32/release/tasmota32.bin
+   setTimeout(function(){location.href='http://%s';},%d);
+   Successful WiFi Connection<br><br></div><div style='text-align:center;'>Redirecting to new device's IP address<br><br><a href='http://%_I'>%_I</a><br></div>
+   http://
+   https://thelastoutpostworkshop.github.io/microcontroller_devkit/gpio_viewer_1_5/
+   {"%s":"Active on http://%s:%d/"}
+   http://%s:%d/
+   http://%_I:%d
+   https://ota.tasmota.com/autoconf/%s_manifest.json
+   https://raw.githubusercontent.com/tasmota/autoconf/main/%s/%s.autoconf
+   <p>&#x1F517; <a target='_blank' href="http://%s/?">%s</a></p>
+   <fieldset><legend><b>&nbsp;Matter &nbsp;</b></legend><p style='width:320px;'>Check the <a href='https://tasmota.github.io/docs/Matter/' target='_blank'>Matter documentation</a>.</p><form action='/matterc' method='post'>
+   <tr class='ztdm htrm'><td>&#x1F517; <a target='_blank' title='http://%s/' href="http://%s/?"'>%s</a></td>
+   &#x1F517; <a target='_blank' title='http://%s/' href="http://%s/?">%s</a>
+   MTR: HTTP sync request 'http://%s:%i%s'
+   MTR: HTTP async request 'http://%s:%i%s'
+   https://ota.tasmota.com/extensions/
+[depuração/UART/JTAG]
+   Debug exception reason: 
+   DebugIntr 
+   Unhandled debug exception
+   /dev/uart
+   /dev/uart/0
+   Usb uart reset digital core
+   Usb jtag reset digital core
+   uart_event_task
+   assert failed: 
+   debug mode FAIL
+   G?Unknown|DebugException|DoubleException|KernelException|CoprocException|IntWdtCpu0|IntWdtCpu1|CacheError
+   @None|Belkin WeMo|Hue Bridge|Shelly
+   None|Error|Info|Debug|More debug
+   Debug exception reason: 
+   DebugIntr 
+   Unhandled debug exception
+   /dev/uart
+   /dev/uart/0
+   Usb uart reset digital core
+   Usb jtag reset digital core
+   SBR: Serial UART%d
+   TYA: Serial UART%d
+   MP3: Serial UART%d
+   SHELLY_DIMMER_BOOT0
+   SHELLY_DIMMER_RST_INV
+   BRY: Serial UART%d
+   assert
+   MBS: Serial UART%d
+   CSE: Serial UART%d
+   PZM: Serial UART%d
+   SPM: Serial UART%d
+   HDW: Shelly Pro %d%s initialized
+   MCP: Serial UART%d
+   PAC: Serial UART%d
+   PDC: Serial UART%d
+   BL6: Serial UART%d
+   BL9: Serial UART%d
+   SDM: Serial UART%d
+   DDS: Serial UART%d
+   ORN: Serial UART%d
+   NRG: Serial UART%d
+   C61: Serial UART%d
+   LOX: Serial UART%d
+   PMS: Serial UART%d
+   MHZ: Serial UART%d
+   SNA: Serial UART%d
+   SDS: Serial UART%d
+   NFC: Serial UART%d
+   RDM: Serial UART%d
+   BLE: Serial UART%d
+   HRX: Serial UART%d
+   SR4-%d: Serial UART%d
+   HPM: Serial UART%d
+   CM1: Serial UART%d
+   gcdebug
+   DEBUG 
+   MTR: Events by types: critical %s, info %s, debug %s
+   MTR: Events queues sizes: critical %s, info %s, debug %s
+   _debug_present
+   ,"debug":true
+   queue_debug
+   assert failed!
+   assert_failed
+   uart_event_task
+   assert failed: 
+   debug mode FAIL
+[atualização/OTA]
+   otadata
+   @|WifiNoSleep|Upgrade|Upload|OtaUrl|SerialLog|Restart|
+   No file selected|Not enough space|Invalid file signature|Program flash size is larger than real flash size| |Upload failed. Enable logging 3|Upload aborted|File invalid|File too large
+   <br><b>OTA Url</b><br><input id='o' placeholder="OTA_URL" value="%s"><br><br><button type='submit'>Start upgrade</button></form></fieldset><br><br>
+   <p></p><div style='text-align:right;font-size:11px;'><hr><a href='https://github.com/arendst/Tasmota' target='_blank' style='color:#aaa;'>Tasmota %s %s by Theo Arends</a></div></div></body></html>
+   </style></head><body><div style='background:var(--c_bg);text-align:left;display:inline-block;color:var(--c_txt);min-width:340px;position:relative;'><span style='text-align:center;color:var(--c_txtwrn);'><h3>SAFEBOOT</h3></span><div style='text-align:center;color:var(--c_ttl);'><noscript>To use Tasmota, please enable JavaScript<br></noscript><h3>%s</h3><h2>%s</h2>
+   tasmota
+   WAPI-CERT
+   Tasmota
+   http://ota.tasmota.com/tasmota32/release/tasmota32-safeboot.bin
+   APP: Erase Tasmota data (%d,%d,%d)
+   <%d>1 %s%s000%s %s tasmota - - - 
+   OTA: unsupported protocol
+   OTA: TLS connection error %d after %d ms
+   OTA: Connection timeout after %d ms
+   OTA: Connection error %d after %d ms
+   OTA: Connected in %d ms, stack low mark %d
+   OTA: unsupported HTTP return code %i
+   OTA: Propagating upload
+   Tasmota/%s (%s)
+   OtaUrl %s
+   total_pwr=%ld, min=%ld, max=%ld, rftx=0x%x, att=%d, dc_i=%d, dc_q=%d
+   total_power=%lld, sig_power=%lld, dc_power=%lld, noise_power=%lld
+   @|WifiNoSleep|Upgrade|Upload|OtaUrl|SerialLog|Restart|Backlog|Delay|Power|PowerLock|TimedPower|Status|State|Sleep|PowerOnState|PulseTime|BlinkTime|BlinkCount|StateText|SaveData|SO|SetOption|TempRes|HumRes|PressRes|WattRes|VoltRes|FreqRes|AmpRes|EnergyRes|WeightRes|Module|Modules|GPIO|GPIORead|GPIOs|Template|PWM|PWMFrequency|PWMRange|ButtonDebounce|SwitchDebounce|SysLog|LogHost|LogPort|SerialBuffer|SerialSend|Baudrate|SerialConfig|SerialDelimiter|IPAddress|NtpServer|Ap|BSSId|SSId|Password|Hostname|WifiConfig|Wifi|DnsTimeout|DeviceName|FN|FriendlyName|SwitchMode|Interlock|TelePeriod|Reset|Time|Timezone|TimeStd|TimeDst|Altitude|LedPower|LedState|LedMask|LedPwmOn|LedPwmOff|LedPwmMode|WifiPower|TempOffset|HumOffset|SpeedUnit|GlobalTemp|GlobalHum|GlobalPress|SwitchText|WiFiScan|WiFiTest|BatteryPercentage|I2CScan|I2CDriver|DevGroupName|DevGroupSend|DevGroupShare|DevGroupStatus|DevGroupTie|FileLog|Info|TouchCal|TouchThres|CpuFrequency|SetSensor|Sensor|Driver|Json|JsonPP
+   None|Button|Button_n|Button_i|Button_in|Switch|Switch_n|Relay|Relay_i|Led|Led_i|Counter|Counter_n|PWM|PWM_i|Buzzer|Buzzer_i|LedLink|LedLink_i|I2C SCL|I2C SDA|SPI MISO|SPI MOSI|SPI CLK|SPI CS|SPI DC|SSPI MISO|SSPI MOSI|SSPI SCLK|SSPI CS|SSPI DC|Backlight|Display Rst|IRsend|IRrecv|RFSend|RFrecv|DHT11|AM2301|SI7021|DHT11_o|DS18x20|DS18x20_o|WS2812|MHZ Tx|MHZ Rx|PZEM0XX Tx|PZEM004 Rx|PZEM016 Rx|PZEM017 Rx|SAir Tx|SAir Rx|PMS5003 Tx|PMS5003 Rx|SDS0X1 Tx|SDS0X1 Rx|SerBr Tx|SerBr Rx|SR04 Tri/Tx|SR04 Ech/Rx|SDMx20 Tx|SDMx20 Rx|SDM630 Tx|SDM630 Rx|TM1638 CLK|TM1638 DIO|TM1638 STB|MP3 Player|HX711 SCK|HX711 DAT|TX2x|Tuya Tx|Tuya Rx|MGC3130 Xfr|MGC3130 Rst|RF Sensor|AZ Tx|AZ Rx|MX31855 CS|MX31855 CLK|MX31855 DO|HLWBL SEL|HLWBL SEL_i|HLWBL CF1|HLW8012 CF|BL0937 CF|MCP39F5 Tx|MCP39F5 Rx|MCP39F5 Rst|PN532 Tx|PN532 Rx|SM16716 CLK|SM16716 DAT|SM16716 PWR|MY92x1 DI|MY92x1 DCKI|CSE7766 Tx|CSE7766 Rx|ALux IrRcv|ALux IrSel|Serial Tx|Serial Rx|Rotary A|Rotary B|ADC Joystick|MX31865 CS|HRE Clock|HRE Data|ADE7953 IRQ|SolaxX1 Tx|SolaxX1 Rx|Zigbee Tx|Zigbee Rx|RDM6300 Rx|iBeacon Tx|iBeacon Rx|A4988 DIR|A4988 STP|A4988 ENA|A4988 MS1|Output Hi|Output Lo|DDS238-2 Tx|DDS238-2 Rx|DDSU666 Tx|DDSU666 Rx|SM2135 Clk|SM2135 Dat|DeepSleep|EXS Enable|Client Tx|Client Rx|Client Rst|Client Rst_i|HPMA Rx|HPMA Tx|GPS Rx|GPS Tx|HM10 Rx|HM10 Tx|LE-01MR Rx|LE-01MR Tx|CC1101 GDO0|CC1101 GDO2|HRXL Rx|MOODL Tx|AS3935|ADC Input|ADC Temp|ADC Light|ADC Button|ADC Button_i|ADC Range|ADC CT Power|CAM_PWDN|CAM_RESET|CAM_XCLK|CAM_SIOD|CAM_SIOC|CAM_DATA|CAM_VSYNC|CAM_HREF|CAM_PCLK|CAM_PSCLK|CAM_HSD|CAM_PSRCS|OpenTherm RX|OpenTherm TX|WindMeter Spd|Button_tc|BL0940 Rx|TCP Tx|TCP Rx|ETH POWER|ETH MDC|ETH MDIO|TInfo Rx|TInfo EN|LMT01 Pulse|iEM3000 Tx|iEM3000 Rx|Zigbee Rst|DYP Rx|MiEl HVAC Tx|MiEl HVAC Rx|WE517 Tx|WE517 Rx|AS608 Tx|AS608 Rx|SHD Boot 0|SHD Reset|RC522 Rst|P9813 Clk|P9813 Dat|Option A|FTC532|RC522 CS|NRF24 CS|NRF24 DC|ILI9341 CS|ILI9341 DC|ILI9488 CS|EPaper29 CS|EPaper42 CS|SSD1351 CS|RA8876 CS|ST7789 CS|ST7789 DC|SSD1331 CS|SSD1331 DC|SDCard CS|Rotary A_n|Rotary B_n|ADC pH|BS814 CLK|BS814 DAT|Wiegand D0|Wiegand D1|NeoPool Tx|NeoPool Rx|SDM72 Tx|SDM72 Rx|TM1637 CLK|TM1637 DIO|DLP Tx|DLP Rx|SSD1351 DC|XPT2046 CS|CSE7761 Tx|CSE7761 Rx|VL53LXX XSHUT|MAX7219 CLK|MAX7219 DIN|MAX7219 CS|TFmini+ Tx|TFmini+ Rx|ZC Pulse|HallEffect|EPD Data|Input|Button_d|Button_id|Switch_d|I2S DOUT|I2S BCLK|I2S WS|I2S DIN|I2S WS In|I2S BCLK In|Interrupt|MCP2515 CS|HRG15 Tx|HRG15 Rx|VINDRIKTNING|BL0939 Rx|BL0942 Rx|HM330X SET|Heartbeat|Heartbeat_i|74x595 SRCLK|74x595 RCLK|74x595 OE|74x595 SER|SolaxX1 RTS|Option E|SDM230 Tx|SDM230 Rx|ADC MQ|CM110x Tx|CM110x Rx|BL6523 Tx|BL6523 Rx|ADE7880 IRQ|Reset|MS01|SDIO CMD|SDIO CLK|SDIO D0|SDIO D1|SDIO D2|SDIO D3|Flowrate|BP5758D Clk|BP5758D Dat|SM2335 Clk|SM2335 Dat|MP3 Busy|TM1621 CS|TM1621 WR|TM1621 RD|TM1621 DAT|Relay_b|Relay_bi|I2S MCLK|ModBr Tx|ModBr Rx|ADE7953 RST|NrgMbs Tx|NrgMbs Rx|ADE7953 CS|Dali RX|Dali TX|BP1658CJ Clk|BP1658CJ Dat|Dingtian CLK|Dingtian SDI|Dingtian Q7|Dingtian PL|Dingtian RCK|LD2410 Tx|LD2410 Rx|ModBr Tx Ena|NrgMbs Tx Ena|ME007 Tri|ME007 Rx|TuyaMCUBr Tx|TuyaMCUBr Rx|BioPDU PZEM0XX Tx|BioPDU PZEM016 Rx|BioPDU Bit|MCP23xxx Int|MCP23Sxx CS|PCF8574 Int|LoxO2 Rx|GM861 Tx|GM861 Rx|Dingtian OE|HDMI CEC|HC8 Rx|I2S DAC|MagicSwitch|Pipsolar TX|Pipsolar RX|LoRa CS|LoRa Rst|LoRa Busy|LoRa DIO0|LoRa DIO1|LoRa DIO2|LoRa DIO3|LoRa DIO4|LoRa DIO5|TS SPI CS|TS RST|TS IRQ|RN2XX3 Tx|RN2XX3 Rx|RN2XX3 Rst|TCP Tx En|ASR650x Tx|ASR650x Rx|Wooliis Rx|ADC Voltage|ADC Current|BL0906 Rx|Dali RX_i|Dali TX_i|LD2410S Tx|LD2410S Rx|I2C Ser Tx|I2C Ser Rx|TM1640 CLK|TM1640 DIN|TWAI Tx|TWAI Rx|TWAI BusOff|TWAI ClkOut|C8-CO2-5K Tx|C8-CO2-5K Rx|V9240 TX|V9240 RX|LD2402 Tx|LD2402 Rx|HSDIO CMD|HSDIO CLK|HSDIO RST|HSDIO D0|HSDIO D1|HSDIO D2|HSDIO D3|VID6608 F|VID6608 CW|MkSkyBlu Tx|MkSkyBlu Rx|ModBr Rx Ena|MbsRelay TX|MbsRelay TX Ena|MbsRelay RX|MbsRelay RX Ena|MiEl HVAC MB Tx|MiEl HVAC MB Rx|MiEl HVAC MB DE|CC1101 CS|
+   No file selected|Not enough space|Invalid file signature|Program flash size is larger than real flash size| |Upload failed. Enable logging 3|Upload aborted|File invalid|File too large
+   <br><b>OTA Url</b><br><input id='o' placeholder="OTA_URL" value="%s"><br><br><button type='submit'>Start upgrade</button></form></fieldset><br><br>
+   <p></p><div style='text-align:right;font-size:11px;'><hr><a href='https://github.com/arendst/Tasmota' target='_blank' style='color:#aaa;'>Tasmota %s %s by Theo Arends</a></div></div></body></html>
+   @TASMOTA_DGR
+   @|PowerCal|VoltageCal|CurrentCal|FrequencyCal|PowerSet|VoltageSet|CurrentSet|FrequencySet|ModuleAddress|EnergyConfig|PowerDelta|PowerLow|PowerHigh|VoltageLow|VoltageHigh|CurrentLow|CurrentHigh|MaxEnergy|MaxEnergyStart|MaxPower|MaxPowerHold|MaxPowerWindow|EnergyToday|EnergyYesterday|EnergyTotal|EnergyExportActive|EnergyUsage|EnergyExport|Tariff|EnergyDisplay|EnergyCols
+   {s}Energy Total{m}%s kWh{e}
+   {s}Active Power Total{m}%s W{e}
+   import global do import python_compat end import cb import energy tasmota = Tasmota() def log(m,l) tasmota.log(m,l) end def load(f) return tasmota.load(f) end if tasmota.settings.bootcount == 0 import partition_core var p = partition_core.Partition() p.resize_fs_to_max() end do import autoconf end do import extension_manager end tasmota.wire1 = Wire(1) tasmota.wire2 = Wire(2) wire1 = tasmota.wire1 wire2 = tasmota.wire2 import gpio import light import hue_bridge do import tapp end import matter global.matter_device = matter.Device() 
+   <br><div contenteditable='false' class='br0 bro' readonly id='t1' cols='340' wrap='off'><div class='br1'>Welcome to the Berry Scripting console. Check the <a href='https://tasmota.github.io/docs/Berry/' target='_blank'>documentation</a>.</div></div><form method='get' id='fo' onsubmit='return l(1);'><textarea id='c1' class='br0 bri' rows='4' cols='340' wrap='soft' autofocus required></textarea><button type='submit'>Run code (or press 'Enter' twice)</button></form>
+   @|Led|Pixels|Rotation|Width|StepPixels|PixelType
+   Tasmota|Device|Overload|Overtemp
+   @SSPM|Display|Dump|Log|Energy|History|Scan|IamHere|Reset|Map|Overload|EnergyTotal|EnergyYesterday|Send|PowerOnState
+   Voltage|Current|Power|ApparentPower|ReactivePower|Factor|Frequency|Total|ExportActive|
+   {s}%s Total Usage{m}%s gal{e}
+   ,"%s":{"TotalUsage":%s,"FlowRate":%s}
+   <hr><p><b>Add Remote Tasmota or OpenBK</b></p><form action='/matteradd' method='get'><table style='width:100%'><tr><td width='30' style='font-size:smaller;'><b>http://</b></td><td><input type='text' name='url' size='8' value='' required placeholder='IP or domain'></td><td width='10' style='font-size:smaller;'><b>/</b></td></tr></table><div style='display: block;'></div><button class='button bgrn'>Auto-configure remote Tasmota</button></form>
+   getTotalBits
+   WAPI-CERT
+   Tasmota
+   Tasmota2
+   Tasmota3
+   Tasmota4
+   http://ota.tasmota.com/tasmota32/release/tasmota32.bin
+   tasmota_%06X
+   tasmotas
+   tasmota32
+   <%d>1 %s%s000%s %s tasmota - - - 
+   {"Rotary%d":{"Pos1":%d,"Pos2":%d}}
+   Tasmota%d
+   APP: Erase Tasmota data (%d,%d,%d)
+   {"StatusPRM":{"Baudrate":%d,"SerialConfig":"%s","GroupTopic":"%s","OtaUrl":"%s","RestartReason":"%s","Uptime":"%s","StartupUTC":"%s","Sleep":%d,"CfgHolder":%d,"BootCount":%d,"BCResetTime":"%s","SaveCount":%d}}
+   Tasmota/%s (%s)
+   To use Tasmota, please enable JavaScript
+   OTA: unsupported protocol
+   OTA: TLS connection error %d after %d ms
+   OTA: Connection timeout after %d ms
+   OTA: Connection error %d after %d ms
+   OTA: Connected in %d ms, stack low mark %d
+   OTA: unsupported HTTP return code %i
+   <b>Friendly Name %d</b> (Tasmota%s)<br><input id='a%d' placeholder="Tasmota%s" value="%s"><p></p>
+   {"%s":{"Total":%s
+   ,"ExportActiveTotal":%s
+   NRG: EnergyTotal[%d] %4_f kWh
+   ,"ENERGY":{"TotalStartTime":"%s","Total":%s
+   ,"TotalTariff":%s
+   ,"PowerTotal":%s
+   Reply Energy Total
+   tasmota/discovery/%s/config
+   tasmota/discovery/%s/sensors
+   TYA: Rx ID=%d Total_Power=%d
+   FLG: Logging disabled. Max rotates
+   FLG: Rotate file %s
+   bad arguments for tasmotaled:ctor
+   TASMOTACLIENT_RST
+   TASMOTACLIENT_RST_INV
+   TASMOTACLIENT_RXD
+   TASMOTACLIENT_TXD
+   TasmotaClient
+   current_ota
+   tasmota.get_light() is deprecated, use light.get()
+   Tasmota %s
+   totactive
+   {"%s":{"rms":{"current_a":%d,"current_b":%d,"current_c":%d,"current_s":%d,"voltage_a":%d,"voltage_b":%d,"voltage_c":%d},"angles":{"angle0":%d,"angle1":%d,"angle2":%d},"powers":{"totactive":{"a":%d,"b":%d,"c":%d}},"freq":%d}}
+   OtaUrl %s
+   total_2
+   total_3
+   total_phases
+   total_sum
+   min_tasmota
+   MoveTo:Signature
+   tasmota_sensor_filter
+   tasmota_sensor_matcher
+   shadow_signature
+   TP_SIGNATURE
+   set_signature
+   CP_SIGNATURE
+   tasmota_switch_index
+   tasmota_shutter_index
+   tasmota_relay_index
+   temp_filter|l:Temp sensor|t:t|h:Tasmota sensor filter, for example SHT3X#Temperature or DS18B20#Temperature
+   https://ota.tasmota.com/autoconf/%s_manifest.json
+   tasmota.set_light() is deprecated, use light.set()
+   tasmota_log_reader
+   https://raw.githubusercontent.com/tasmota/autoconf/main/%s/%s.autoconf
+   TAP: Loaded Tasmota App '%s%s'
+   MTR: sigma3_tbs does not have a valid signature
+   <fieldset><legend><b>&nbsp;Matter &nbsp;</b></legend><p style='width:320px;'>Check the <a href='https://tasmota.github.io/docs/Matter/' target='_blank'>Matter documentation</a>.</p><form action='/matterc' method='post'>
+   if(!k.length){el.innerHTML='<i>No devices discovered yet. Reboot a Tasmota device on this broker.</i>';return;}
+   <hr><p><b>Discovered MQTT Devices</b></p><div id='mqtt_disc'><i>Subscribing to tasmota/discovery...</i></div>
+   MTR: Error: no fabricid nor deviceid in NOC certificate
+   tasmota/discovery/
+   tasmota/discovery/#
+   Invalid ota partition number
+   <instance: Partition_otadata(ota_active:%s, ota_seq=[%d,%d], ota_max=%d)>
+   OtaUrl
+   _temp_root_ca_certificate
+   DAC_Cert_FFF1_8000
+   PAI_Cert_FFF1
+   get_ota_slot
+   maxota
+   active_otadata
+   crc32_ota_seq
+   set_ota_max
+   https://ota.tasmota.com/extensions/
+   is_ota
+   Matter_Certs
+   load_otadata
+   Partition_otadata
+   update_total
+   ZIP: invalid zip signature
+   total_pwr=%ld, min=%ld, max=%ld, rftx=0x%x, att=%d, dc_i=%d, dc_q=%d
+   total_power=%lld, sig_power=%lld, dc_power=%lld, noise_power=%lld
+[proteção eFuse]
+   Refused our IP address
+   connection refused
+   Efuse reset digital core
+   Refused our IP address
+   Connection refused
+   Efuse reset digital core
+   connection refused
+   efuse_em
+   event_refused
