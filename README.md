@@ -68,4 +68,5 @@ sudo ./lab/run_all.sh
 Não publique credenciais reais. Os valores deste repositório são fictícios.
 
 ## 11. Vídeo
-Link: `<COLE AQUI O LINK NÃO LISTADO>` — roteiro em `video-roteiro.md`.
+Link: https://youtu.be/JNwaTdVuQTU (YouTube, não listado; duração 6:34) — roteiro em `video-roteiro.md`.
+
